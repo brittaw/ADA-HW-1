@@ -90,40 +90,19 @@ Catarrhini=c("Hominoidea","Cercopithecoidea"))
 Superorder <-c(Strepsirhini=c("Lorisiformes","Lemuriformes"),
 Haplorhini= c("Tarsiiformes","Simiiformes"))
 
-##Order
-Order <-c(Primates=c("Strepsirhini","Haplorhini")
-data.frame(
-Superfamily<-c (Lorisiformes="Lorisidae","Galagidae")
-Lemuroidea=c("Cheirogaleidae","Lepilemuridae", "Indriidae", "Lemuridae","Daubentoniidae")
-Tarsioidea= c("Tarsiidae")
-Ceboidea= c("Cebidae", "Atelidae", "Pitheciidae")
-Hominoidea= c("Hylobatidae", "Hominidae")
-Cercopithecoidea= c("Cercopithecidae")
-Parvorder<- c(Platyrrhini="Ceboidea",
-Catarrhini=c("Hominoidea","Cercopithecoidea"))
-Inferaorder<- c(Lorisiformes="Lorisoidea",
-Lemuriformes="Lemuroidea",
-Tarsiiformes="Tarsioidea",
-Simiiformes=c("Platyrrhini","Catarrhini"))
-Superorder<-c(Strepsirhini=c("Lorisiformes","Lemuriformes")
-Haplorhini= c("Tarsiiformes","Simiiformes"))
-Order<-c(Primates=c("Strepsirhini","Haplorhini"))
-)
-
-
-Order<-data.frame(Superfamily, Parvorder, Infraorder, Superorder)
+##Order 
+Primates %>% nest(data = c((((Superfamily),(Parvorder)),(Infraorder)),(Superorder)))
+Order= c((((Superfamily),(Parvorder)),(Infraorder)),(Superorder)))
 Order
 
-library(tibble)
-t <-
-  tibble(
-  g = c(1, 2, 3, 4),
-  data = list(
-    tibble(Superorder),
-    tibble(Infraorder),
-    tibble(Parvorder),
-    tibble(Superfamily)))
-t
+Order <- data.table(data = c((((Superfamily),(Parvorder)),(Infraorder)),(Superorder))
 
-Primates %>% nest(data = c(Superfamily, Parvorder, Infraorder, Superorder))
+Order
+
+## Double Brackets 
+nwm <- Order[[ParvorderPlatyrrhini]]
+class(nwm)
+
+## Extract Tarsiidae 
+Family$Tarsiidae
 
