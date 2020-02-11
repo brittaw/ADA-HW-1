@@ -25,16 +25,39 @@ split<- str_split(quote, " ")
 gsub("[[:punct:]]","",quote)
 
 ## Extraction of every fourth element in a vector
-4 <- split[seq(from=1, to=60, by=4)]
-
-print(4)
+n<- split[seq(1, length(split), 4)]
+print(n)
 
 ##Alphabetize 
 sort(split, alphabetical = TRUE)
 
-
 ## Challenge 2
+## construct a matrix
+m1 <- matrix(data = 1:59, nrow = 8, ncol = 10, byrow = FALSE)
+m1
+
+## Extract row 5, column 2
+m1E <- m1[5,2]
+m1E
+
+## Extract row 5 to 7
+m1E2<- m1[5:7]
+m1E2
+
+## Extract row 3, col 4 to row 6, col 9
+m2 <- m1[3:6, 4:9]
+m2
+class(m2)
+
 ## Challenge 3
+## Construct an array (5x5 X 4x4)
+
+a <- array(data = 400:1, dim = c(5,5,4,4), descending = TRUE)
+a
+a[1, 1, 1, 2]
+a[2, 3, 2, ]
+a[1:5, 1:5, 3, 3]
+
 ## Challenge 4
 
 ```{r pressure, echo=FALSE}
