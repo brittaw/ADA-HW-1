@@ -1,0 +1,44 @@
+---
+title: "MODULES 07 and 08"
+author: "BA White"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+library(tidyverse)
+library(stringr)
+library(readr)
+
+## Challenge 1
+
+## Quote as a vector
+quote <- "There is grandeur in this view of life, with its several powers, having been originally breathed by the Creator into a few forms or into one; and that, whilst this planet has gone circling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being evolved."
+
+## Vector with individual words as elements
+split<- str_split(quote, " ")
+
+## Removing puncutation 
+gsub("[[:punct:]]","",quote)
+
+## Extraction of every fourth element in a vector
+4 <- split[seq(from=1, to=60, by=4)]
+
+print(4)
+
+##Alphabetize 
+sort(split, alphabetical = TRUE)
+
+
+## Challenge 2
+## Challenge 3
+## Challenge 4
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
