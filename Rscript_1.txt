@@ -125,5 +125,5 @@ t <-
     tibble(Superfamily)))
 t
 
-Primates %>% nest(data = c(Superfamily, Parvorder, Infraorder, Superorder))
+Primates %>% nest(c(Superfamily, Parvorder, Infraorder, Superorder))
 
